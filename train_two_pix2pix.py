@@ -15,8 +15,8 @@ model = create_model(opt)
 visualizer = Visualizer(opt)
 total_steps = 0
 
-
-for epoch in range(opt.epoch_count, opt.niter + opt.niter_decay + 1):
+# for epoch in range(opt.epoch_count, opt.niter + opt.niter_decay + 1):
+for epoch in range(10):
     epoch_start_time = time.time()
     iter_data_time = time.time()
     epoch_iter = 0
@@ -49,10 +49,10 @@ for epoch in range(opt.epoch_count, opt.niter + opt.niter_decay + 1):
                 visualizer.plot_current_errors(epoch, float(epoch_iter) / dataset_size, opt, errors1)
                 visualizer.plot_current_errors(epoch, float(epoch_iter) / dataset_size, opt, errors2)
         
-        if total_steps % opt.save_latest_freq == 0:
-            print('saving the latest model (epoch %d, total_steps %d)' %
-                  (epoch, total_steps))
-            model.save('latest')
+        # if total_steps % opt.save_latest_freq == 0:
+        #     print('saving the latest model (epoch %d, total_steps %d)' %
+        #           (epoch, total_steps))
+        #     model.save('latest')
 
         iter_data_time = time.time()
         
